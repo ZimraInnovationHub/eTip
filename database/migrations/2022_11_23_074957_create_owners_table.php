@@ -19,6 +19,7 @@ class CreateOwnersTable extends Migration
             $table->string('firstname')->nullable();
             $table->string('country')->nullable();
             $table->string('address')->nullable();
+            $table->unsignedBigInteger('permit_id')->nullable();
             $table->timestamps();
         });
     }

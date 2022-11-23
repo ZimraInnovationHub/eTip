@@ -40,4 +40,9 @@ class Permit extends Model
     {
         return $this->hasMany(Good::class);
     }
+
+    public function owner()
+    {
+        return $this->hasOne(Owner::class);
+    }
 }
