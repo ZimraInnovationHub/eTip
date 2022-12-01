@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/tip', [PermitController::class, 'store']);
     Route::post('/tip/{permit}', [PermitController::class, 'update']);
 
-    Route::post('/change-password', [AuthController::class, 'changePassword']);
+    Route::post('/change-password/{id}', [AuthController::class, 'changePassword']);
 
     Route::post('/logout', [AuthController::class, 'logout']);
 });
