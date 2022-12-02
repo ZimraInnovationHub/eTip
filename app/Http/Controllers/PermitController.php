@@ -77,16 +77,16 @@ class PermitController extends Controller
             $vehicle->save();
 
             $trailer = new Trailer();
-            $trailer->make = $request['t_make'];
-            $trailer->body = $request['t_body'];
-            $trailer->reg_number = $request['t_reg_number'];
-            $trailer->chassis_number = $request['t_chassis_number'];
-            $trailer->country_of_manu = $request['t_country_of_manu'];
-            $trailer->country_code = $request['t_country_code'];
-            $trailer->y_o_m = $request['t_y_o_m'];
-            $trailer->value = $request['t_value'];
-            $trailer->currency = $request['t_currency'];
-            $trailer->insurance = $request['t_insurance'];
+            $trailer->make = $request['trailer_make'];
+            $trailer->body = $request['trailer_body'];
+            $trailer->reg_number = $request['trailer_reg_number'];
+            $trailer->chassis_number = $request['trailer_chassis_number'];
+            $trailer->country_of_manu = $request['trailer_country_of_manu'];
+            $trailer->country_code = $request['trailer_country_code'];
+            $trailer->y_o_m = $request['trailer_y_o_m'];
+            $trailer->value = $request['trailer_value'];
+            $trailer->currency = $request['trailer_currency'];
+            $trailer->insurance = $request['trailer_insurance'];
             $trailer->permit_id = $permit->id;
 
             $trailer->save();
@@ -95,8 +95,8 @@ class PermitController extends Controller
 
             $goods->description = $request['description'];
             $goods->serial_number = $request['serial_number'];
-            $goods->value = $request['g_value'];
-            $goods->currency = $request['g_currency'];
+            $goods->value = $request['goods_value'];
+            $goods->currency = $request['goods_currency'];
             $goods->permit_id = $permit->id;
 
             $goods->save();
@@ -107,10 +107,10 @@ class PermitController extends Controller
         if ($has_owner == true) {
             $owner = new Owner();
 
-            $owner->lastname = $request['o_lastname'];
-            $owner->firstname = $request['o_firstname'];
-            $owner->country = $request['o_country'];
-            $owner->address = $request['o_address'];
+            $owner->lastname = $request['owner_lastname'];
+            $owner->firstname = $request['owner_firstname'];
+            $owner->country = $request['owner_country'];
+            $owner->address = $request['owner_address'];
             $owner->permit_id = $permit->id;
 
             $owner->save();
@@ -128,7 +128,8 @@ class PermitController extends Controller
             'vehicle' => $vehicle,
             'trailer' => $trailer,
             'owner' => $owner,
-            'goods' => $goods
+            'goods' => $goods,
+            'message' => 'Permit requested successfully...'
         ];
 
         return response($response);
@@ -202,16 +203,16 @@ class PermitController extends Controller
         $vehicle->save();
 
         $trailer = Trailer::where('permit_id', $permit->id)->first();
-        $trailer->make = $request['t_make'];
-        $trailer->body = $request['t_body'];
-        $trailer->reg_number = $request['t_reg_number'];
-        $trailer->chassis_number = $request['t_chassis_number'];
-        $trailer->country_of_manu = $request['t_country_of_manu'];
-        $trailer->country_code = $request['t_country_code'];
-        $trailer->y_o_m = $request['t_y_o_m'];
-        $trailer->value = $request['t_value'];
-        $trailer->currency = $request['t_currency'];
-        $trailer->insurance = $request['t_insurance'];
+        $trailer->make = $request['trailer_make'];
+        $trailer->body = $request['trailer_body'];
+        $trailer->reg_number = $request['trailer_reg_number'];
+        $trailer->chassis_number = $request['trailer_chassis_number'];
+        $trailer->country_of_manu = $request['trailer_country_of_manu'];
+        $trailer->country_code = $request['trailer_country_code'];
+        $trailer->y_o_m = $request['trailer_y_o_m'];
+        $trailer->value = $request['trailer_value'];
+        $trailer->currency = $request['trailer_currency'];
+        $trailer->insurance = $request['trailer_insurance'];
         $trailer->permit_id = $permit->id;
 
         $trailer->save();
@@ -220,8 +221,8 @@ class PermitController extends Controller
 
         $goods->description = $request['description'];
         $goods->serial_number = $request['serial_number'];
-        $goods->value = $request['g_value'];
-        $goods->currency = $request['g_currency'];
+        $goods->value = $request['goods_value'];
+        $goods->currency = $request['goods_currency'];
         $goods->permit_id = $permit->id;
 
         $goods->save();
@@ -231,10 +232,10 @@ class PermitController extends Controller
         if ($has_owner == true) {
             $owner = Owner::where('permit_id', $permit->id)->first();
 
-            $owner->lastname = $request['o_lastname'];
-            $owner->firstname = $request['o_firstname'];
-            $owner->country = $request['o_country'];
-            $owner->address = $request['o_address'];
+            $owner->lastname = $request['owner_lastname'];
+            $owner->firstname = $request['owner_firstname'];
+            $owner->country = $request['owner_country'];
+            $owner->address = $request['owner_address'];
             $owner->permit_id = $permit->id;
 
             $owner->save();
@@ -252,7 +253,8 @@ class PermitController extends Controller
             'vehicle' => $vehicle,
             'trailer' => $trailer,
             'owner' => $owner,
-            'goods' => $goods
+            'goods' => $goods,
+            'message' => 'Permit updated successfully...'
         ];
 
         return response($response);

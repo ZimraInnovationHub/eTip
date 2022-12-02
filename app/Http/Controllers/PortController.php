@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePortRequest;
 use App\Models\Port;
 use Illuminate\Http\Request;
 
@@ -33,9 +34,19 @@ class PortController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePortRequest $request)
     {
-        //
+        $request->validated($request->only(['name', 'code']));
+
+        $port = Port::create([
+            'name' => $request->name,
+            'code' => $request->code,
+        ]);
+
+        return response([
+            'port' => $port,
+            'message' => 'Port created successfully...'
+        ]);
     }
 
     /**
