@@ -63,4 +63,27 @@
         </div>
     </div>
     @include('modals.register')
+
+    {{-- <script type="">
+        //login
+        const handleLogin = async (e) => {
+            // e.preventDefault();
+            const passport = document.querySelector(".passport").value;
+            const password = document.querySelector(".password").value;
+
+            const details = {
+                passport: passport,
+                password: password,
+            };
+
+            await axios
+                .post(api + "login", details)
+                .then((response) => {
+                    return api + "/home";
+                })
+                .catch(function(error) {
+                    console.log(error.response.data);
+                });
+        };
+    </script> --}}
 @endsection
