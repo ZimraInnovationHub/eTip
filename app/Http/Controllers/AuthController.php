@@ -10,6 +10,7 @@ use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -24,6 +25,8 @@ class AuthController extends Controller
         }
 
         $user = User::where('passport', $request->passport)->first();
+
+        Session::put('user', $user);
 
         return $this->success([
             'user' => $user,
@@ -44,6 +47,8 @@ class AuthController extends Controller
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
+
+        Session::put('user', $user);
 
         return $this->success([
             'user' => $user,

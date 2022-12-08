@@ -1,0 +1,321 @@
+.bg {
+    background-image: url("../images/bgetip.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: aliceblue;
+    height: 82vh;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+.tipImage {
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 10px;
+}
+.shippingImage {
+    height: 40vh;
+    width: 40vh;
+    margin-left: 12vw;
+    /* border-radius: 10%; */
+}
+
+.details {
+    margin-top: 45px;
+}
+
+.detailsText {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 45px;
+    width: 80vh;
+}
+.detailsContent {
+    font-family: "Arial";
+    font: 15px;
+    color: #009933;
+    text-align: justify;
+}
+.formInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+    margin-right: 40px;
+}
+
+.formLength {
+    /* width:75vh; */
+    /* resize:vertical; */
+}
+.btnColor {
+    width: 30vh;
+    background-color: #009933;
+    color: #fff;
+}
+.btnColor:hover {
+    border: 3px solid #009933;
+    color: #009933;
+}
+.hFour {
+    margin-left: 20px;
+    font-weight: bolder;
+    font-size: larger;
+    color: #009933;
+    margin-top: 5px;
+}
+.hrefButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    /* width:75vh; */
+}
+.hrefClicks {
+    color: #009933;
+    text-decoration: none;
+}
+.howTo {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+    margin-top: 55px;
+}
+.btnCenter {
+    display: flex;
+    /* justify-content: center; */
+    margin-left: 120px;
+}
+
+/* Modal */
+.modal-body {
+    background-color: aliceblue;
+}
+.modal-header {
+    background-color: #009933;
+}
+.regModal {
+    color: #fff;
+    align-self: center;
+    margin-left: 45vw;
+    font-size: 100px;
+}
+.signUpBtn {
+    width: 35vw;
+    height: 4.5vw;
+}
+.signupInputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.formSignup {
+    /* width: 35vw; */
+}
+.userRegistration {
+    margin-top: 60px;
+}
+.bg-green {
+    background-color: #009933;
+}
+.text-bg-green {
+    background-color: #009933;
+}
+.main {
+    margin-top: 60px;
+}
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.eTip {
+    margin-left: 15px;
+}
+.btnCards {
+    margin-top: 30px;
+}
+.tableStyle {
+    margin-top: 30px;
+}
+.textDecor {
+    text-decoration: none;
+}
+.svgIcons {
+    display: flex;
+    justify-content: center;
+}
+.cardText {
+    display: flex;
+    justify-content: center;
+}
+.svgIcons {
+    margin-top: 15px;
+}
+.svgColor {
+    color: #009933;
+}
+.textColor {
+    color: #000;
+}
+.text-bg-tip {
+    background-color: #009933;
+    width: 12vw;
+    height: 3vw;
+    font-size: larger;
+}
+.text-bg-tips {
+    background-color: red;
+    width: 12vw;
+    height: 3vw;
+    font-size: larger;
+}
+.badgeTIP {
+    display: flex;
+    justify-content: space-evenly;
+}
+.newTIPForms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tipFORM {
+    display: flex;
+    justify-content: center;
+}
+.tipInput {
+    width: 50vw;
+}
+.signUpTIPFirst {
+    height: 4.5vw;
+    width: 50vw;
+}
+.signUpTIP {
+    height: 4.5vw;
+    width: 25vw;
+}
+.addOtherTIP {
+    height: 4.5vw;
+    width: 15vw;
+}
+.searchTIPMargin {
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+}
+.formSearch {
+    border-width: 0;
+    width: 12vw;
+}
+.searchTIP {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+.btnSearch {
+    width: 5vw;
+}
+
+.btnSearchClose {
+    color: #fff;
+}
+.declare {
+    margin-left: 20px;
+}
+.declarations {
+    border-width: 2px;
+    border-color: #009933;
+    border-style: solid;
+    width: 90vw;
+}
+.declarationHeading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+}
+.instructions {
+    display: flex;
+    justify-content: center;
+}
+.textDeclarations {
+    font-size: small;
+}
+.submitOther {
+    display: flex;
+    justify-content: flex-end;
+}
+.otherAdd {
+    display: flex;
+    flex-direction: column;
+}
+.formAddMore {
+    display: flex;
+    justify-content: center;
+}
+.addHeading {
+    color: #fff;
+}
+.formMakeEdit {
+    /* background-color: #000; */
+    z-index: 250;
+}
+.formAdd {
+}
+/* .fs{
+    z-index: -1;
+  } */
+/* .focusOnME{
+    z-index: 100000;
+  } */
+.addRowsClass {
+    display: "flex";
+    flex-direction: row;
+}
+
+.addMoreItems {
+    width: 20vw;
+}
+.addRows {
+    display: "flex";
+    flex-direction: column;
+}
+
+@media screen and (max-width: 850px) {
+    .loginContainer {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        height: 90vh;
+        width: 75vw;
+    }
+    .tipImage {
+        display: none;
+    }
+    .formInputs {
+        display: flex;
+        justify-self: center;
+    }
+    .justifyForm {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        margin-left: 6vw;
+        margin-bottom: 100vh;
+    }
+    .cText {
+        display: none;
+    }
+    .formLength {
+        /* width:45vh; */
+        resize: vertical;
+    }
+}
