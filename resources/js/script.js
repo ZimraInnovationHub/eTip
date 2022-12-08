@@ -80,24 +80,6 @@ function removeItem(e) {
     }
 }
 
-// function addMoreItems() {
-//   console.log("addMore");
-//   des = document.getElementById("desc").value;
-//   serial = document.getElementById("serial").value;
-//   currency = document.getElementById("currency").value;
-//   val = document.getElementById("value").value;
-
-//   console.log(des + serial + currency + val);
-
-//   document.getElementById("addMoreNo").value = "1";
-//   document.getElementById("addMoreDesc").value = des;
-//   document.getElementById("addMoreSer").value = serial;
-//   document.getElementById("addMoreQuant").value = currency;
-//   document.getElementById("addMoreCurrency").value = val;
-// }
-
-// Add More Goods Ends
-
 // DOCUMENT SCRIPTS ENDS
 
 // API COMMS
@@ -199,7 +181,7 @@ const addPersonalDetails = () => {
     localStorage.setItem("intended_port_code", intended_port_code);
 };
 
-const addVehickeDetails = () => {
+const addVehicleDetails = () => {
     const title = document.querySelector(".title").value;
     const last_name = document.querySelector(".last_name").value;
     const first_name = document.querySelector(".first_name").value;

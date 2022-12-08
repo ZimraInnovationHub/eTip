@@ -12,13 +12,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <div class="badgeTIP">
-                        <span class="badge text-bg-tip">1.Driver</span>
-                        <span class="badge text-bg-tip">2.Vehicle</span>
-                        <span class="badge text-bg-tip">3.Trailer</span>
-                        <span class="badge text-bg-tip">4.Owner</span>
-                        <span class="badge text-bg-tips">5.Other Goods</span>
-                    </div>
+                    @include('partials.tabs')
                     <div class="userRegistration otherAdd">
                         <div class="addOther mb-2">
                             <button type="button" class="btn btnColor addOtherTIP">

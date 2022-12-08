@@ -12,13 +12,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <div class="badgeTIP">
-                        <span class="badge text-bg-tip">1.Driver</span>
-                        <span class="badge text-bg-tip">2.Vehicle</span>
-                        <span class="badge text-bg-tip">3.Trailer</span>
-                        <span class="badge text-bg-tips">4.Owner</span>
-                        <span class="badge text-bg-tip">5.Other Goods</span>
-                    </div>
+                    @include('partials.tabs')
                     <div class="userRegistration tipFORM">
                         <form action="" method="POST" class="">
                             <div class="newTIPForms">
