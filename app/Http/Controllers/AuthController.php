@@ -10,6 +10,7 @@ use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
@@ -22,17 +23,18 @@ class AuthController extends Controller
 
         if (!Auth::attempt($request->only(['passport', 'password']))) {
             return $this->error('', 'Credentials do not match', 401);
+        } else {
+            $user = User::where('passport', $request->passport)->first();
+
+            session()->put('user', $user);
+            Log::info(session()->get('user', $user));
+
+            return $this->success([
+                'user' => $user,
+                'message' => 'Login was successful...',
+                'token' => $user->createToken('API Token')->plainTextToken
+            ]);
         }
-
-        $user = User::where('passport', $request->passport)->first();
-
-        session()->put('user', $user);
-
-        return $this->success([
-            'user' => $user,
-            'message' => 'Login was successful...',
-            'token' => $user->createToken('API Token')->plainTextToken
-        ]);
     }
 
     public function register(StoreUserRequest $request)
@@ -50,6 +52,8 @@ class AuthController extends Controller
         ]);
 
         Session::put('user', $user);
+
+        Log::info(session()->get('user', $user));
 
         return $this->success([
             'user' => $user,
@@ -75,8 +79,12 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        return 'Logout';
+        auth()->user()->tokens()->delete();
+
+        return response([
+            'message' => 'Logout successful'
+        ]);
     }
 }

@@ -33,7 +33,7 @@
                         <a class="nav-link" href="#">Change Password</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <button class="nav-link" onclick="handleLogout()">Logout</button>
                     </li>
                 </ul>
                 <!-- <form class="d-flex mt-3" role="search">
