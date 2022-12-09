@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['middleware' => ['auth:sanctum']], function () {
+});
+
 Route::get('/', [GeneralController::class, 'index']);
 Route::get('/home', [GeneralController::class, 'home']);

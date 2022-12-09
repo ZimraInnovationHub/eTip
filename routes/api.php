@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\PermitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //Protected Routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
+    // Route::get('/home', [GeneralController::class, 'home']);
 
     Route::post('/tip', [PermitController::class, 'store']);
     Route::post('/tip/{permit}', [PermitController::class, 'update']);

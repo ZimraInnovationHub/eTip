@@ -26,10 +26,11 @@ class AuthController extends Controller
 
         $user = User::where('passport', $request->passport)->first();
 
-        Session::put('user', $user);
+        session()->put('user', $user);
 
         return $this->success([
             'user' => $user,
+            'message' => 'Login was successful...',
             'token' => $user->createToken('API Token')->plainTextToken
         ]);
     }
