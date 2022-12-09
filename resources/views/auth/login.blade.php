@@ -48,7 +48,13 @@
                         </div>
 
                         <div class="btnCenter">
-                            <button class="btn btnColor" type="button" onclick="handleLogin()">
+                            <button 
+                                class="btn btnColor g-recaptcha" 
+                                type="button" 
+                                data-sitekey="6LcSqGcjAAAAAIengNtFb-AjHM0s95lyTOsg2ZlT"
+                                data-callback='onSubmit' 
+                                data-action='submit'
+                                onclick="handleLogin()">
                                 Login
                             </button>
                         </div>
