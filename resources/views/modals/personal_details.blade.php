@@ -112,8 +112,7 @@
                                 </div>
 
                                 <div class="formSignup">
-                                    <button type="button" class="btn btnColor signUpTIPFirst"
-                                        data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                                    <button type="button" class="btn btnColor signUpTIPFirst" id="addPersonal"
                                         onclick="addPersonalDetails()">
                                         Next
                                     </button>

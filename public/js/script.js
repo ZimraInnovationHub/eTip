@@ -2,18 +2,18 @@
 
 // setting multiple attributes at once
 function setAttributes(ele, attr) {
-  for (var key in attr) {
-    ele.setAttribute(key, attr[key]);
-  }
+    for (var key in attr) {
+        ele.setAttribute(key, attr[key]);
+    }
 }
 // const tr = document.getElementById("addRows");
 // tr.style.display = "flex";
 // tr.style.flexDirection = "row";
 
 function appendElements(elements) {
-  for (var i in elements) {
-    document.getElementById("addRows").appendChild(elements[i]);
-  }
+    for (var i in elements) {
+        document.getElementById("addRows").appendChild(elements[i]);
+    }
 }
 
 // const add=document.getElementById('modalShow');
@@ -23,11 +23,11 @@ const container = document.querySelector(".items-content");
 container.addEventListener("click", removeItem);
 
 function addRows() {
-  // count++;
-  var div = document.createElement("div");
-  div.className = "row mb-2";
+    // count++;
+    var div = document.createElement("div");
+    div.className = "row mb-2";
 
-  div.innerHTML += `
+    div.innerHTML += `
     <div class="col">
       <div class="form-floating">
         <input type="text" class="form-control formAdd" id="desc" name="desc"/>
@@ -66,7 +66,7 @@ function addRows() {
     </div>
   `;
 
-  container.append(div);
+    container.append(div);
 }
 
 const addItem = document.querySelector(".addOtherTIP");
@@ -74,10 +74,10 @@ const addItem = document.querySelector(".addOtherTIP");
 addItem.addEventListener("click", addRows);
 
 function removeItem(e) {
-  if (e.target.classList.contains("delete")) {
-    var div = e.target.parentElement.parentElement;
-    container.removeChild(div);
-  }
+    if (e.target.classList.contains("delete")) {
+        var div = e.target.parentElement.parentElement;
+        container.removeChild(div);
+    }
 }
 
 // function addMoreItems() {
@@ -106,115 +106,140 @@ const api = "http://localhost:8000/api/";
 
 //login
 const handleLogin = async (e) => {
-  //   e.preventDefault();
-  const passport = document.querySelector(".passport").value;
-  const password = document.querySelector(".password").value;
+    //   e.preventDefault();
+    const passport = document.querySelector(".passport").value;
+    const password = document.querySelector(".password").value;
 
-  const details = {
-    passport: passport,
-    password: password,
-  };
+    const details = {
+        passport: passport,
+        password: password,
+    };
 
-  await axios
-    .post(api + "login", details)
-    .then((response) => {
-      console.log(response);
-      window.open("application.html");
-    })
-    .catch(function (error) {
-      console.log(error.response.data);
-    });
+    await axios
+        .post(api + "login", details)
+        .then((response) => {
+            console.log(response);
+            window.open("application.html");
+        })
+        .catch(function (error) {
+            console.log(error.response.data);
+        });
 };
 
 const handleRegistration = async (e) => {
-  //   e.preventDefault();
-  const first_name = document.querySelector(".first_name").value;
-  const last_name = document.querySelector(".last_name").value;
-  const email = document.querySelector(".email").value;
-  const passport = document.getElementById("passport").value;
-  const phone = document.querySelector(".phone").value;
-  const password = document.getElementById("password").value;
-  const password_confirmation = document.querySelector(
-    ".password_confirmation"
-  ).value;
+    //   e.preventDefault();
+    const first_name = document.querySelector(".first_name").value;
+    const last_name = document.querySelector(".last_name").value;
+    const email = document.querySelector(".email").value;
+    const passport = document.getElementById("passport").value;
+    const phone = document.querySelector(".phone").value;
+    const password = document.getElementById("password").value;
+    const password_confirmation = document.querySelector(
+        ".password_confirmation"
+    ).value;
 
-  const details = {
-    last_name: last_name,
-    first_name: first_name,
-    email: email,
-    passport: passport,
-    phone: phone,
-    password: password,
-    password_confirmation: password_confirmation,
-  };
+    const details = {
+        last_name: last_name,
+        first_name: first_name,
+        email: email,
+        passport: passport,
+        phone: phone,
+        password: password,
+        password_confirmation: password_confirmation,
+    };
 
-  await axios
-    .post(api + "register", details)
-    .then((response) => {
-      if (response.data) {
-        console.log(response);
-        window.open("application.html");
-      }
-    })
-    .catch(function (error) {
-      console.log(error.response.data);
-    });
+    await axios
+        .post(api + "register", details)
+        .then((response) => {
+            if (response.data) {
+                console.log(response);
+                window.open("application.html");
+            }
+        })
+        .catch(function (error) {
+            console.log(error.response.data);
+        });
 };
 
 const addPersonalDetails = () => {
-  const title = document.querySelector(".title").value;
-  const last_name = document.querySelector(".last_name").value;
-  const first_name = document.querySelector(".first_name").value;
-  const email = document.querySelector(".email").value;
-  const passport = document.querySelector(".passport").value;
-  const phone = document.querySelector(".phone").value;
-  const country = document.querySelector(".country").value;
-  const address = document.querySelector(".address").value;
-  const country_code = document.querySelector(".country_code").value;
-  const nationality = document.querySelector(".nationality").value;
-  const nationality_code = document.querySelector(".nationality_code").value;
-  const intended_address = document.querySelector(".intended_address").value;
-  const intended_date_of_travel = document.querySelector(
-    ".intended_date_of_travel"
-  ).value;
-  const intended_port = document.querySelector(".intended_port").value;
-  const intended_port_code = document.querySelector(
-    ".intended_port_code"
-  ).value;
+    const title = document.querySelector(".title").value;
+    const last_name = document.querySelector(".last_name").value;
+    const first_name = document.querySelector(".first_name").value;
+    const email = document.querySelector(".email").value;
+    const passport = document.querySelector(".passport").value;
+    const phone = document.querySelector(".phone").value;
+    const country = document.querySelector(".country").value;
+    const address = document.querySelector(".address").value;
+    const country_code = document.querySelector(".country_code").value;
+    const nationality = document.querySelector(".nationality").value;
+    const nationality_code = document.querySelector(".nationality_code").value;
+    const intended_address = document.querySelector(".intended_address").value;
+    const intended_date_of_travel = document.querySelector(
+        ".intended_date_of_travel"
+    ).value;
+    const intended_port = document.querySelector(".intended_port").value;
+    const intended_port_code = document.querySelector(
+        ".intended_port_code"
+    ).value;
 
-  localStorage.setItem("title", title);
-  localStorage.setItem("last_name", last_name);
-  localStorage.setItem("first_name", first_name);
-  localStorage.setItem("email", email);
-  localStorage.setItem("passport", passport);
-  localStorage.setItem("phone", phone);
-  localStorage.setItem("country", country);
-  localStorage.setItem("address", address);
-  localStorage.setItem("country_code", country_code);
-  localStorage.setItem("nationality", nationality);
-  localStorage.setItem("nationality_code", nationality_code);
-  localStorage.setItem("intended_address", intended_address);
-  localStorage.setItem("intended_date_of_travel", intended_date_of_travel);
-  localStorage.setItem("intended_port", intended_port);
-  localStorage.setItem("intended_port_code", intended_port_code);
+    var pArr = [
+        title,
+        last_name,
+        first_name,
+        email,
+        passport,
+        phone,
+        country,
+        address,
+        country_code,
+        nationality,
+        nationality_code,
+        intended_address,
+        intended_date_of_travel,
+    ];
+
+    for (var i = 0; i < pArr.length; i++) {
+        if (pArr[i] === "") {
+            return false;
+        } else {
+            localStorage.setItem("title", title);
+            localStorage.setItem("last_name", last_name);
+            localStorage.setItem("first_name", first_name);
+            localStorage.setItem("email", email);
+            localStorage.setItem("passport", passport);
+            localStorage.setItem("phone", phone);
+            localStorage.setItem("country", country);
+            localStorage.setItem("address", address);
+            localStorage.setItem("country_code", country_code);
+            localStorage.setItem("nationality", nationality);
+            localStorage.setItem("nationality_code", nationality_code);
+            localStorage.setItem("intended_address", intended_address);
+            localStorage.setItem(
+                "intended_date_of_travel",
+                intended_date_of_travel
+            );
+            localStorage.setItem("intended_port", intended_port);
+            localStorage.setItem("intended_port_code", intended_port_code);
+        }
+    }
 };
 
 const addVehickeDetails = () => {
-  const title = document.querySelector(".title").value;
-  const last_name = document.querySelector(".last_name").value;
-  const first_name = document.querySelector(".first_name").value;
-  const email = document.querySelector(".email").value;
-  const passport = document.querySelector(".passport").value;
-  const phone = document.querySelector(".phone").value;
-  const country = document.querySelector(".country").value;
-  const address = document.querySelector(".address").value;
-  const country_code = document.querySelector(".country_code").value;
-  const nationality = document.querySelector(".nationality").value;
-  const nationality_code = document.querySelector(".nationality_code").value;
-  const intended_address = document.querySelector(".intended_address").value;
-  const intended_date_of_travel = document.querySelector(
-    ".intended_date_of_travel"
-  ).value;
+    const title = document.querySelector(".title").value;
+    const last_name = document.querySelector(".last_name").value;
+    const first_name = document.querySelector(".first_name").value;
+    const email = document.querySelector(".email").value;
+    const passport = document.querySelector(".passport").value;
+    const phone = document.querySelector(".phone").value;
+    const country = document.querySelector(".country").value;
+    const address = document.querySelector(".address").value;
+    const country_code = document.querySelector(".country_code").value;
+    const nationality = document.querySelector(".nationality").value;
+    const nationality_code = document.querySelector(".nationality_code").value;
+    const intended_address = document.querySelector(".intended_address").value;
+    const intended_date_of_travel = document.querySelector(
+        ".intended_date_of_travel"
+    ).value;
 };
 
 //     const div = document.createElement("div");

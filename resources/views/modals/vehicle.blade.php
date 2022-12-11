@@ -103,8 +103,7 @@
                                         data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
                                         Back
                                     </button>
-                                    <button type="button" class="btn btnColor signUpTIP"
-                                        data-bs-target="#exampleModalToggle3" data-bs-toggle="modal"
+                                    <button type="button" class="btn btnColor signUpTIP" data-bs-toggle="modal"
                                         onclick="addVehicleDetails()">
                                         Next
                                     </button>
