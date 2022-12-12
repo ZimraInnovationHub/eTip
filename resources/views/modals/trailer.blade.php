@@ -18,75 +18,77 @@
                                 <!-- inset checkbox and label i have a trailer -->
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                        checked name="insurance" />
+                                        name="insurance" />
                                     <label class="form-check-label" for="flexCheckChecked">
                                         I Have A Trailer
                                     </label>
                                 </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
-                                        placeholder="" name="trailer_make" />
-                                    <label for="floatingInput">Trailer Maker</label>
-                                </div>
+                                <div class="trailer_details" hidden>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control tipInput" id="floatingInput"
+                                            placeholder="" name="trailer_make" />
+                                        <label for="floatingInput">Trailer Maker</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <select class="form-select" id="floatingSelect"
-                                        aria-label="Floating label select example" name="trailer_body">
-                                        <option selected>Caravan</option>
-                                        <option value="1">Box Trailer</option>
-                                        <option value="2">Flatbed Trailer</option>
-                                        <option value="2">Boat Trailer</option>
-                                        <option value="3">Tanker Trailer</option>
-                                    </select>
-                                    <label for="floatingSelect">Trailer Body</label>
-                                </div>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="floatingSelect"
+                                            aria-label="Floating label select example" name="trailer_body_type">
+                                            <option selected>Caravan</option>
+                                            <option value="1">Box Trailer</option>
+                                            <option value="2">Flatbed Trailer</option>
+                                            <option value="2">Boat Trailer</option>
+                                            <option value="3">Tanker Trailer</option>
+                                        </select>
+                                        <label for="floatingSelect">Trailer Body</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
-                                        placeholder="" name="trailer_reg_number" />
-                                    <label for="floatingInput">Trailer Registration Number</label>
-                                </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control tipInput" id="floatingInput"
+                                            placeholder="" name="trailer_registration" />
+                                        <label for="floatingInput">Trailer Registration Number</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
-                                        placeholder="" name="trailer_chassis_number" />
-                                    <label for="floatingInput">Trailer Chassis Number</label>
-                                </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control tipInput" id="floatingInput"
+                                            placeholder="" name="trailer_chassis" />
+                                        <label for="floatingInput">Trailer Chassis Number</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
-                                        placeholder="" name="trailer_country_of_manu" />
-                                    <label for="floatingInput">Trailer Country Of Manufacture</label>
-                                </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control tipInput" id="floatingInput"
+                                            placeholder="" name="trailer_country_of_manufacture" />
+                                        <label for="floatingInput">Trailer Country Of Manufacture</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
-                                        placeholder="" name="trailer_country_code" />
-                                    <label for="floatingInput">Trailer Country Of Manufacture Code</label>
-                                </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control tipInput" id="floatingInput"
+                                            placeholder="" name="trailer_country_code" />
+                                        <label for="floatingInput">Trailer Country Of Manufacture Code</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
-                                        placeholder="" name="trailer_y_o_m" />
-                                    <label for="floatingInput">Trailer Year Of Manufacture</label>
-                                </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control tipInput" id="floatingInput"
+                                            placeholder="" name="trailer_year" />
+                                        <label for="floatingInput">Trailer Year Of Manufacture</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
-                                        placeholder="" name="trailer_value" />
-                                    <label for="floatingInput">Trailer Value</label>
-                                </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control tipInput" id="floatingInput"
+                                            placeholder="" name="trailer_value" />
+                                        <label for="floatingInput">Trailer Value</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
-                                        placeholder="" name="trailer_currency" />
-                                    <label for="floatingInput">Currency(select)</label>
-                                </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control tipInput" id="floatingInput"
+                                            placeholder="" name="trailer_currency" />
+                                        <label for="floatingInput">Currency(select)</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
-                                        placeholder="" name="trailer_insurance" />
-                                    <label for="floatingInput">Trailer Insurance Company</label>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control tipInput" id="floatingInput"
+                                            placeholder="" name="trailer_insurance" />
+                                        <label for="floatingInput">Trailer Insurance Company</label>
+                                    </div>
                                 </div>
 
                                 <div class="formSignup">

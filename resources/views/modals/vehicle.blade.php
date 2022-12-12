@@ -17,7 +17,7 @@
                         <form action="" method="POST" class="">
                             <div class="newTIPForms">
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control tipInput" id="floatingInput"
+                                    <input type="email" class="form-control tipInput make" id="floatingInput"
                                         placeholder="" name="make" />
                                     <label for="floatingInput">Vehicle Make/Model</label>
                                 </div>
@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput chasis" id="floatingInput"
+                                    <input type="text" class="form-control tipInput chassis" id="floatingInput"
                                         placeholder="" name="chassis_number" />
                                     <label for="floatingInput">Chasis Number</label>
                                 </div>
@@ -93,7 +93,7 @@
                                 </div>
 
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control tipInput" id="floatingInput"
+                                    <input type="text" class="form-control tipInput insurance" id="floatingInput"
                                         placeholder="" name="insurance" />
                                     <label for="floatingInput">Insurance Company</label>
                                 </div>
@@ -103,7 +103,7 @@
                                         data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
                                         Back
                                     </button>
-                                    <button type="button" class="btn btnColor signUpTIP" data-bs-toggle="modal"
+                                    <button type="button" class="btn btnColor signUpTIP" id="addVehicle"
                                         onclick="addVehicleDetails()">
                                         Next
                                     </button>

@@ -117,7 +117,7 @@ logout.onclick = handleLogout;
 // personal details
 
 const addPersonalDetails = () => {
-    emptyFields();
+    emptyPersonalFields();
     const title = document.querySelector(".title").value;
     const last_name = document.querySelector(".last_name").value;
     const first_name = document.querySelector(".first_name").value;
@@ -138,7 +138,7 @@ const addPersonalDetails = () => {
         ".intended_port_code"
     ).value;
 
-    if (emptyFields() == "false") {
+    if (emptyPersonalFields() == "false") {
         Swal.fire({
             icon: "error",
             text: "Please fill all fields...",
@@ -162,17 +162,106 @@ const addPersonalDetails = () => {
         );
         localStorage.setItem("intended_port", intended_port);
         localStorage.setItem("intended_port_code", intended_port_code);
+
         const button = document.querySelector("#addPersonal");
         button.dataset.bsTarget = "#exampleModalToggle2";
         button.dataset.bsToggle = "modal";
         button.click();
     }
+};
 
-    // const button = document.querySelector("#addPersonal");
-    // button.dataset.target = "#exampleModalToggle2";
-    // button.dataset.toggle = "modal";
-    // console.log(button);
-    // button.click();
+const addVehicleDetails = () => {
+    emptyVehicleFields();
+    const make = document.querySelector(".make").value;
+    const body_type = document.querySelector(".body_type").value;
+    const vClass = document.querySelector(".class").value;
+    const registration = document.querySelector(".registration").value;
+    const chassis = document.querySelector(".chassis").value;
+    const capacity = document.querySelector(".capacity").value;
+    const country_of_manufacture = document.querySelector(
+        ".country_of_manufacture"
+    ).value;
+    const country_code = document.querySelector(".country_code").value;
+    const year = document.querySelector(".year").value;
+    const value = document.querySelector(".value").value;
+    const insurance = document.querySelector(".insurance").value;
+    const currency = document.querySelector(".currency").value;
+
+    console.log(make);
+    console.log(body_type);
+    console.log(vClass);
+
+    if (emptyVehicleFields() == "false") {
+        Swal.fire({
+            icon: "error",
+            text: "Please fill all fields...",
+        });
+    } else {
+        localStorage.setItem("make", make);
+        localStorage.setItem("body_type", body_type);
+        localStorage.setItem("vClass", vClass);
+        localStorage.setItem("registration", registration);
+        localStorage.setItem("chassis", chassis);
+        localStorage.setItem("capacity", capacity);
+        localStorage.setItem("country_of_manufacture", country_of_manufacture);
+        localStorage.setItem("country_code", country_code);
+        localStorage.setItem("year", year);
+        localStorage.setItem("value", value);
+        localStorage.setItem("insurance", insurance);
+        localStorage.setItem("currency", currency);
+
+        const button = document.querySelector("#addVehicle");
+        button.dataset.bsTarget = "#exampleModalToggle3";
+        button.dataset.bsToggle = "modal";
+        button.click();
+    }
+};
+
+const addTrailerDetails = () => {
+    emptyTrailerFields();
+    const make = document.querySelector(".make").value;
+    const body_type = document.querySelector(".body_type").value;
+    const vClass = document.querySelector(".class").value;
+    const registration = document.querySelector(".registration").value;
+    const chassis = document.querySelector(".chassis").value;
+    const capacity = document.querySelector(".capacity").value;
+    const country_of_manufacture = document.querySelector(
+        ".country_of_manufacture"
+    ).value;
+    const country_code = document.querySelector(".country_code").value;
+    const year = document.querySelector(".year").value;
+    const value = document.querySelector(".value").value;
+    const insurance = document.querySelector(".insurance").value;
+    const currency = document.querySelector(".currency").value;
+
+    console.log(make);
+    console.log(body_type);
+    console.log(vClass);
+
+    if (emptyVehicleFields() == "false") {
+        Swal.fire({
+            icon: "error",
+            text: "Please fill all fields...",
+        });
+    } else {
+        localStorage.setItem("make", make);
+        localStorage.setItem("body_type", body_type);
+        localStorage.setItem("vClass", vClass);
+        localStorage.setItem("registration", registration);
+        localStorage.setItem("chassis", chassis);
+        localStorage.setItem("capacity", capacity);
+        localStorage.setItem("country_of_manufacture", country_of_manufacture);
+        localStorage.setItem("country_code", country_code);
+        localStorage.setItem("year", year);
+        localStorage.setItem("value", value);
+        localStorage.setItem("insurance", insurance);
+        localStorage.setItem("currency", currency);
+
+        const button = document.querySelector("#addVehicle");
+        button.dataset.bsTarget = "#exampleModalToggle3";
+        button.dataset.bsToggle = "modal";
+        button.click();
+    }
 };
 
 // checking for empty fields
@@ -219,43 +308,36 @@ function emptyPersonalFields() {
         return "true";
     }
 }
+
 function emptyVehicleFields() {
-    const title = document.querySelector(".title").value;
-    const last_name = document.querySelector(".last_name").value;
-    const first_name = document.querySelector(".first_name").value;
-    const email = document.querySelector(".email").value;
-    const passport = document.querySelector(".passport").value;
-    const phone = document.querySelector(".phone").value;
-    const country = document.querySelector(".country").value;
-    const address = document.querySelector(".address").value;
+    const make = document.querySelector(".make").value;
+    const body_type = document.querySelector(".body_type").value;
+    const vClass = document.querySelector(".class").value;
+    const registration = document.querySelector(".registration").value;
+    const chassis = document.querySelector(".chassis").value;
+    const capacity = document.querySelector(".capacity").value;
+    const country_of_manufacture = document.querySelector(
+        ".country_of_manufacture"
+    ).value;
     const country_code = document.querySelector(".country_code").value;
-    const nationality = document.querySelector(".nationality").value;
-    const nationality_code = document.querySelector(".nationality_code").value;
-    const intended_address = document.querySelector(".intended_address").value;
-    const intended_date_of_travel = document.querySelector(
-        ".intended_date_of_travel"
-    ).value;
-    const intended_port = document.querySelector(".intended_port").value;
-    const intended_port_code = document.querySelector(
-        ".intended_port_code"
-    ).value;
+    const year = document.querySelector(".year").value;
+    const value = document.querySelector(".value").value;
+    const insurance = document.querySelector(".insurance").value;
+    const currency = document.querySelector(".currency").value;
 
     if (
-        title === "" ||
-        last_name === "" ||
-        first_name === "" ||
-        email === "" ||
-        passport === "" ||
-        phone === "" ||
-        country === "" ||
-        address === "" ||
+        make === "" ||
+        body_type === "" ||
+        vClass === "" ||
+        registration === "" ||
+        chassis === "" ||
+        capacity === "" ||
+        country_of_manufacture === "" ||
         country_code === "" ||
-        nationality === "" ||
-        nationality_code === "" ||
-        intended_address === "" ||
-        intended_date_of_travel === "" ||
-        intended_port === "" ||
-        intended_port_code === ""
+        year === "" ||
+        value === "" ||
+        insurance === "" ||
+        currency === ""
     ) {
         return "false";
     } else {
