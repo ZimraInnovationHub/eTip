@@ -12,18 +12,19 @@
             </div>
             <div class="modal-body">
                 <div class="container">
-                    @include('partials.tabs')
+                    <div class="forMobileView">
+                        @include('partials.tabs')
+                        <div class="addingMoreItems">
                     <div class="userRegistration otherAdd">
                         <div class="addOther mb-2">
                             <button type="button" class="btn btnColor addOtherTIP">
                                 Add Item
                             </button>
-                            <!-- href="#addItem"
-                        data-bs-toggle="modal" -->
+                            
                         </div>
                         <form action="" method="POST" class="">
                             <div class="items-content">
-                                <div class="row mb-2">
+                                <div class="row mb-2 adderMore">
                                     <div class="col">
                                         <div class="form-floating">
                                             <input type="text" class="form-control formAdd" id="desc"
@@ -40,7 +41,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" id="currency"
+                                            <select class="form-select formAdd" id="currency"
                                                 aria-label="Floating label select example" name="goods_value">
                                                 <option selected>USDs</option>
                                                 <option value="1">ZWL Bond Notes</option>
@@ -117,6 +118,9 @@
                             </div>
                         </form>
                     </div>
+                        </div>
+                    </div>
+                   
                 </div>
             </div>
 

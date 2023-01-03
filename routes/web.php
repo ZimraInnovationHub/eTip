@@ -22,4 +22,12 @@ Route::middleware(['logged'])->group(function () {
     Route::get('/home', [GeneralController::class, 'home']);
 });
 
+
+Route::get('/myaccount', function(){
+    return view('password');
+});
+Route::get('/tip', function(){
+    return view('tip');
+});
+
 // Route::get('/home', [GeneralController::class, 'home'])->middleware('logged');

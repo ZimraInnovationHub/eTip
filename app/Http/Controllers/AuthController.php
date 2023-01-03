@@ -13,16 +13,24 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
+use function PHPUnit\Framework\isEmpty;
+
 class AuthController extends Controller
 {
     use HttpResponses;
 
     public function login(LoginUserRequest $request)
     {
-        $request->validated($request->only(['passport', 'password']));
+        $request->validated($request->only([
+            'passport', 
+            'password',
+            'g-rCaptcha'
+        ]));
 
         if (!Auth::attempt($request->only(['passport', 'password']))) {
             return $this->error('', 'Credentials do not match', 401);
+        }else if(isEmpty('g-rCaptcha')){
+            return $this->error('', 'ReCapture is required', 401);
         } else {
             $user = User::where('passport', $request->passport)->first();
 

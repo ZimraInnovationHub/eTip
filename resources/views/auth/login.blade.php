@@ -8,17 +8,22 @@
                 <h4 class="hFour">ZIMRA e-Tip</h4>
 
                 <div class="details">
-                    <div class="tipImage">
-                        <img src="{{ asset('images/tiplogo.png') }}" class="shippingImage" />
+                    <div class="flex justify-center ">
+                        <img src="{{ asset('images/tiplogo.png') }}" class="h-40 w-40" />
                     </div>
-                    <div class="detailsText">
-                        <p class="detailsContent">
+                    <div class="flex justify-center ">
+                        <p class="text-green-500 text-xl text-justify ml-4 mt-6">
                             The ZIMRA eTIP platform seeks to make it convenient and quick
                             for visitors coming to Zimbabwe to apply for their vehicle
                             Temporary Import Permits online, from anywhere in the world
                             prior to their arrival at the border post
                         </p>
+                
                     </div>
+                    <div class="ml-4 mt-8">
+                    <a href="#" class="text-xl text-green-600 hover:text-black">How To Apply?</a> &nbsp; &nbsp;
+                    <a href="#" class="text-xl text-green-600 hover:text-black">Requirements</a>
+                </div>
                 </div>
             </div>
 
@@ -47,24 +52,35 @@
                             <a href="#" class="hrefClicks">Forgot Password</a>
                         </div>
 
-                        <div class="btnCenter">
+                        <div class="flex justify-center">
                             <button 
-                                class="btn btnColor g-recaptcha" 
+                                class="btn bg-[#009933] hover:bg-black text-white w-[120px] g-recaptch" 
                                 type="button" 
-                                data-sitekey="6LcSqGcjAAAAAIengNtFb-AjHM0s95lyTOsg2ZlT"
-                                data-callback='onSubmit' 
-                                data-action='submit'
-                                onclick="handleLogin()">
+                                onclick="loginTest()">
                                 Login
                             </button>
+                            
                         </div>
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                        <div class="g-recaptcha" data-sitekey="6Lfl3mcjAAAAACvyp41pc3KDglEOIfM6MZiYLH74" data-theme="light" data-callback="rCaptcha"></div>
+                            
+                                 <!-- <p class="alert{{Session::get('alert-class','alert-info')}}">
+                                    error
+                                 </p> -->
+                         
+                        <br/>
+
                     </div>
                 </form>
 
-                <div class="howTo">
-                    <a href="#" class="hrefClicks">How To Apply?</a> &nbsp; &nbsp;
-                    <a href="#" class="hrefClicks">Requirements</a>
-                </div>
             </div>
         </div>
     </div>
@@ -73,6 +89,7 @@
     {{-- <script type="">
         //login
         const handleLogin = async (e) => {
+            
             // e.preventDefault();
             const passport = document.querySelector(".passport").value;
             const password = document.querySelector(".password").value;
@@ -91,5 +108,6 @@
                     console.log(error.response.data);
                 });
         };
+
     </script> --}}
 @endsection

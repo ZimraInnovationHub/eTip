@@ -30,7 +30,7 @@
                         <a class="nav-link" href="#">Reactivate TIP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Change Password</a>
+                        <a class="nav-link" href="/myaccount">Change Password</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id='logout'>Logout</a>

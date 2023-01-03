@@ -11,6 +11,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
+                    <div class="forMobileView">
                     @include('partials.tabs')
                     <div class="userRegistration tipFORM">
                         <form action="" method="POST" class="">
@@ -120,6 +121,8 @@
                             </div>
                         </form>
                     </div>
+                    </div>
+                    
                 </div>
             </div>
 

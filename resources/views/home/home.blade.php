@@ -6,7 +6,8 @@
         <h4>Available Services</h4>
         <div class="btnCards">
             <div class="col-md-12 options">
-                <div class="card" style="width: 18rem">
+
+                <div class="card mobileCards" style="width: 18rem">
                     <a href="#" class="textDecor" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
                         <div class="svgIcons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -23,7 +24,7 @@
                     </a>
                 </div>
 
-                <div class="card" style="width: 18rem">
+                <div class="card mobileCards" style="width: 18rem">
                     <a href="#" class="textDecor" data-bs-toggle="modal" data-bs-target="#searchTip">
                         <div class="svgIcons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -40,7 +41,7 @@
                     </a>
                 </div>
 
-                <div class="card" style="width: 18rem">
+                <div class="card mobileCards" style="width: 18rem">
                     <a href="#" class="textDecor">
                         <div class="svgIcons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -69,7 +70,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Item Name</th>
+                    <th scope="col">TIP Reference</th>
                     <th scope="col">Purpose</th>
                     <th scope="col">Year</th>
                 </tr>
@@ -77,19 +78,19 @@
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Motor Vehicle (Toyota Hilux)</td>
+                    <td><a href="tip">43212D40</a></td>
                     <td>Holidays</td>
-                    <td>2021</td>
+                    <td>2022</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>Trailer</td>
+                    <td><a href="#">12552S20</a></td>
                     <td>Holidays</td>
                     <td>2021</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>Laptop</td>
+                    <td><a href="#">15232V20</a></td>
                     <td>Holiday</td>
                     <td>2021</td>
                 </tr>
