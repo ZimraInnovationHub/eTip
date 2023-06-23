@@ -22,26 +22,33 @@ class AuthController extends Controller
     public function login(LoginUserRequest $request)
     {
         $request->validated($request->only([
-            'passport', 
+            'passport',
             'password',
             'g-rCaptcha'
         ]));
 
         if (!Auth::attempt($request->only(['passport', 'password']))) {
             return $this->error('', 'Credentials do not match', 401);
-        }else if(isEmpty('g-rCaptcha')){
-            return $this->error('', 'ReCapture is required', 401);
-        } else {
+        }
+        // uncomment here to use recapture
+        // else if(isEmpty('g-rCaptcha')){
+        //     return $this->error('', 'ReCapture is required', 401);
+        // } 
+
+        else {
             $user = User::where('passport', $request->passport)->first();
 
-            session()->put('user', $user);
-            Log::info(session()->get('user', $user));
+            if ($user) {
+                return view('home/home');
+            }
+            // session()->put('user', $user);
+            // Log::info(session()->get('user', $user));
 
-            return $this->success([
-                'user' => $user,
-                'message' => 'Login was successful...',
-                'token' => $user->createToken('API Token')->plainTextToken
-            ]);
+            // return $this->success([
+            //     'user' => $user,
+            //     'message' => 'Login was successful...',
+            //     'token' => $user->createToken('API Token')->plainTextToken
+            // ]);
         }
     }
 
@@ -72,28 +79,26 @@ class AuthController extends Controller
 
     public function changePassword(ChangePasswordRequest $request, $id)
     {
-        $user = User::find($id);
+        // $user = User::find($id);
 
-        $request->currentPassword = Hash::make($request->currentPassword);
+        // $request->currentPassword = Hash::make($request->currentPassword);
 
-        if ($request->currentPassword = $user->password) {
-            $user->password = Hash::make($request->newPassword);
+        // if ($request->currentPassword = $user->password) {
+        //     $user->password = Hash::make($request->newPassword);
 
-            $user->save();
-        }
+        //     $user->save();
+        // }
 
-        return $this->success([
-            'user' => $user,
-        ]);
+        // return $this->success([
+        //     'user' => $user,
+        // ]);
     }
 
     public function logout(Request $request)
     {
-        auth()->user()->tokens()->delete();
-        session()->flush();
+        // auth()->user()->tokens()->delete();
+        // session()->flush();
 
-        return response([
-            'message' => 'Logout successful'
-        ]);
+        return view('auth.login');
     }
 }

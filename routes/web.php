@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\GeneralController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,16 +18,19 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 });
 Route::get('/', [GeneralController::class, 'index']);
 
-Route::middleware(['logged'])->group(function () {
-    Route::get('/home', [GeneralController::class, 'home']);
-});
+// Route::middleware(['logged'])->group(function () {
+//     Route::get('/home', [GeneralController::class, 'home']);
+// });
 
 
-Route::get('/myaccount', function(){
+Route::get('/myaccount', function () {
     return view('password');
 });
-Route::get('/tip', function(){
+Route::get('/tip', function () {
     return view('tip');
 });
 
+Route::get('/home', [GeneralController::class, 'home']);
+
+Route::post("/login", [AuthController::class, 'login']);
 // Route::get('/home', [GeneralController::class, 'home'])->middleware('logged');
